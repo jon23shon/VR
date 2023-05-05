@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon"type="image/png"sizes="32x32" href="/assets/vr-icon-17.jpg"/>
+        <script src="aframe.js"></script>
+        <title>LSBU Immersive Experience</title>
+    </head>
+    <body>
+        <!-- classroom for navigation -->
+        <a-scene>
+            <a-assets>
+                <a-asset-item id="base-scene" src="assets/classroom.glb"></a-asset-item>
+                <img id="logo"src="assets/vr-icon-17.jpg"/>
+                <img id="uni" src="assets/uni_logo.jpg"/> 
+            </a-assets>
+
+            <!-- Classroom model -->
+            <a-entity id="base-entity">
+                <a-gltf-model src="#base-scene" scale="1 1 1"></a-gltf-model>
+                <a-text color="black" value="Welcome to the LSBU immersive Experience" position="-3.9 2.190 0.982" rotation="0 90 0" scale="1 1 1"></a-text>
+                <a-image src="#logo" position="-2.475 1.545 0.013" rotation="0 90 0" scale="1 1 1"></a-image>
+                <a-image src="#uni" position="-1.4 1.214 0" scale="0.25 0.25 0.25" rotation="0 90 0" onclick="start()">
+                    <a-text color="black" value="Press to Begin" position="-0.674 0.665 0.5" rotation="0 0 0" scale="1 1 1"></a-text>
+                </a-image>
+            </a-entity>
+
+            <!-- User viewpoint -->
+            <a-entity id="camera" position="0 2.036 0" rotation="0 90 0">
+                <a-camera wasd-controls-enabled="false" position="0 0 0">
+                    <a-cursor color="red"></a-cursor>
+                </a-camera>
+            </a-entity>
+
+            <!-- Character camera viewpoint -->
+            <script type="text/javascript">
+                function start() {window.location.href = '/vr.html' }
+            </script>
+        </a-scene>
+    </body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LSBU Immersive Experience</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/vr-icon-17.jpg">
+    <script src="aframe.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/webvr-polyfill@latest/build/webvr-polyfill.js'></script>
+  </head>
+  <body>
+    <!-- Navigation page -->
+    <a-scene id="scene0" cursor="rayOrigin: mouse" raycaster="objects: .raycastable">
+      <a-sky id="image-360" scale="-1 1 1" position="-0.112 0 0" radius="20" src="assets/entrance.jpg"></a-sky>
+      <a-text position="-1.5 4.3 -4" value="Hello welcome to LSBU" width="10" color="blue"></a-text>
+      <a-text position="-1.5 3 -4" value="Look left to navigate our campus" width="10" color="blue"></a-text>
+      <a-entity>
+        <a-text position="-12 6 9" value="PB1" rotation="0 90 0" width="10" color="blue"></a-text>
+        <a-image src= "assets/nav.png " position="-11 5 9" rotation="0 90 0"  scale="1 1 1" onclick="navigateToScene(1)"></a-image>
+    
+        <a-text position="-12 0.7 9" value="PB2" rotation="0 90 0" width="10" color="blue"></a-text>
+        <a-image src= "assets/nav.png " position="-11 1.7 9" rotation="0 90 0"    scale="1 1 1" onclick="navigateToScene(2)"></a-image>
+    
+        <a-text position="-12 6 6" value="Faraday" rotation="0 90 0" width="10" color="blue"></a-text>
+        <a-image src= "assets/nav.png " position="-11 5 6" rotation="0 90 0"   scale="1 1 1" onclick="navigateToScene(3)"></a-image>
+    
+        <a-text position="-12 0.7 6" value="Westminster" rotation="0 90 0" width="10" color="blue"></a-text>
+        <a-image src= "assets/nav.png " position="-11 1.7 6" rotation="0 90 0"    scale="1 1 1" onclick="navigateToScene(4)"></a-image>
+    
+        <a-text position="-12 6 3" value="Chelsea" rotation="0 90 0" width="10" color="blue"></a-text>
+        <a-image src= "assets/nav.png " position="-11 5 3" rotation="0 90 0"   scale="1 1 1" onclick="navigateToScene(5)"></a-image>
+    
+        <a-text position="-12 0.7 3" value="Helpdesk" rotation="0 90 0" width="10" color="blue"></a-text>
+        <a-image src= "assets/nav.png " position="-11 1.7 3" rotation="0 90 0"   scale="1 1 1"  onclick="navigateToScene(6)"></a-image>
+    
+        <a-text position="-12 6 0" value="Library-view" rotation="0 90 0" width="10" color="blue"></a-text>
+        <a-image src= "assets/nav.png " position="-11 5 0" rotation="0 90 0"    scale="1 1 1" onclick="navigateToScene(7)"></a-image>
+    
+        <a-text position="-12 0.7 0" value="print-view" rotation="0 90 0" width="10" color="blue"></a-text>
+        <a-image src= "assets/nav.png " position="-11 1.7 0" rotation="0 90 0"    scale="1 1 1" onclick="navigateToScene(8)"></a-image>
+        
+        <a-text position="-12 6 -3" value="rent/self-study" rotation="0 90 0" width="10" color="blue"></a-text>
+        <a-image src= "assets/nav.png " position="-11 5 -3" rotation="0 90 0"   scale="1 1 1" onclick="navigateToScene(9)" ></a-image>
+        
+        <a-text position="-12 0.7 -3" value="Student-cen" rotation="0 90 0" width="10" color="blue"></a-text>
+        <a-image src= "assets/nav.png " position="-11 1.7 -3" rotation="0 90 0"   scale="1 1 1" onclick="navigateToScene(10)" ></a-image>
+        
+        <a-text position="-12 6 -6" value="Waterloo" rotation="0 90 0" width="10" color="blue"></a-text>
+        <a-image src= "assets/nav.png " position="-11 5 -6" rotation="0 90 0"    scale="1 1 1" onclick="navigateToScene(11)" ></a-image>
+        
+        
+        <a-text position="-11 0.7 -6" value="Careers hub x Cafe" rotation="0 90 0" width="10" color="blue"></a-text>
+        <a-image src= "assets/nav.png " position="-11 1.7 -6" rotation="0 90 0"   scale="1 1 1" onclick="navigateToScene(12)"></a-image>
+    
+  <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+          
+    </a-scene>
+
+    <!-- Perry block1 -->
+    <a-scene id="scene1" style="display: none" dynamic>
+      <a-assets>
+        <video id="scene1-texture" autoplay="true" loop="true" src="assets/PB1_new_video.mkv">
+      </a-assets>
+      
+      <a-entity id="scene1-container">
+        <a-videosphere src="#scene1-texture"></a-videosphere>
+        <a-image src= "assets/nav.png " rotation="0 0 0" position="1 0.75 -4" radius="0.5" height="1.5"  onclick="navigateToScene(0)"></a-image>
+         
+      </a-entity>
+            <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+
+    </a-scene>
+    
+    <!-- Perry block 2 -->
+    <a-scene id="scene2" style="display: none" dynamic>
+      <a-assets>
+        <video id="scene2-texture" autoplay="true" loop="true" src="assets/Welcome to PB2.mkv">
+      </a-assets>
+      
+      <a-entity id="scene2-container">
+        <a-videosphere src="#scene2-texture"></a-videosphere>
+        <a-image src= "assets/nav.png " rotation="0 0 0"  position="1 0.75 -4" radius="0.5" height="1.5" rotation="0 0 0"  onclick="navigateToScene(0)"></a-image>
+         
+      </a-entity>
+            <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+
+    </a-scene>
+    
+    <!-- Faraday hall -->
+    <a-scene id="scene3" style="display: none" dynamic>
+      <a-assets>
+        <video id="scene3-texture" autoplay="true" loop="true" src="assets/FW_NewVideo.mkv">
+      </a-assets>
+      
+      <a-entity id="scene3-container">
+        <a-videosphere src="#scene3-texture"></a-videosphere>
+        <a-image src= "assets/nav.png " rotation="0 0 0" position="1 0.75 -4" radius="0.5" height="1.5"  onclick="navigateToScene(0)"></a-image>
+         
+      </a-entity>
+            <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+
+    </a-scene>
+
+    <!-- Westminster hall -->
+    <a-scene id="scene4" style="display: none" dynamic>
+      <a-assets>
+        <video id="scene4-texture" autoplay="true" loop="true" src="assets/Westminister_NewVideo.mkv">
+      </a-assets>
+      
+      <a-entity id="scene4-container">
+        <a-videosphere src="#scene4-texture"></a-videosphere>
+        <a-image src= "assets/nav.png" rotation="0 0 0" position="1 0.75 -4" radius="0.5" height="1.5"  onclick="navigateToScene(0)"></a-image>
+         
+      </a-entity>
+            <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+
+    </a-scene>
+
+    <!-- Chelsea hall -->
+    <a-scene id="scene5" style="display: none" dynamic>
+      <a-assets>
+        <video id="scene5-texture" autoplay="true" loop="true" src="assets/Chelsea Lecture Thetare.mkv">
+      </a-assets>
+      
+      <a-entity id="scene5-container">
+        <a-videosphere src="#scene5-texture"></a-videosphere>
+        <a-image src= "assets/nav.png " rotation="0 0 0"  position="1 0.75 -4" radius="0.5" height="1.5"  onclick="navigateToScene(0)"></a-image>
+         
+      </a-entity>
+            <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+
+    </a-scene>
+
+    <!-- Helpdesk -->
+    <a-scene id="scene6" style="display: none" dynamic>
+      <a-assets>
+        <video id="scene6-texture" autoplay="true" loop="true" src="assets/Helpdesk_NewVideo (1).mkv">
+      </a-assets>
+      
+      <a-entity id="scene6-container">
+        <a-videosphere src="assets/Helpdesk_NewVideo (1).mkv" autoplay="true" loop="true" ></a-videosphere>
+        <a-image src= "assets/nav.png " rotation="0 0 0"  position="1 0.75 -4" radius="0.5" height="1.5"  onclick="navigateToScene(0)"></a-image>
+         
+      </a-entity>
+            <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+
+    </a-scene>
+
+    <!-- Library view -->
+    <a-scene id="scene7" style="display: none" dynamic>
+      <a-assets>
+        <video id="scene7-texture" autoplay="true" loop="true" src="assets/Library View.mkv">
+      </a-assets>
+      
+      <a-entity id="scene7-container">
+        <a-videosphere src="#scene7-texture"></a-videosphere>
+        <a-image src= "assets/nav.png " rotation="0 0 0"  position="1 0.75 -4" radius="0.5" height="1.5"  onclick="navigateToScene(0)"></a-image>
+         
+      </a-entity>
+            <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+
+    </a-scene>
+
+    <!-- Printer room -->
+    <a-scene id="scene8" style="display: none" dynamic>
+      <a-assets>
+        <video id="scene8-texture" autoplay="true" loop="true" src="assets/Printer_NewVideo.mkv">
+      </a-assets>
+      
+      <a-entity id="scene8-container">
+        <a-videosphere src="#scene8-texture"></a-videosphere>
+        <a-image src= "assets/nav.png " rotation="0 0 0" position="1 0.75 -4" radius="0.5" height="1.5"  onclick="navigateToScene(0)"></a-image>
+         
+      </a-entity>
+            <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+
+    </a-scene>
+
+    <!-- Rent a book x Study area -->
+    <a-scene id="scene9" style="display: none">
+      <a-assets>
+        <video id="scene9-texture" autoplay="true" loop="true" src="assets/Rent_A_Book_NewVideo.mkv">
+      </a-assets>
+      
+      <a-entity id="scene9-container">
+        <a-videosphere src="#scene9-texture"></a-videosphere>
+        <a-image src= "assets/nav.png " rotation="0 0 0" position="1 0.75 -4" radius="0.5" height="1.5"  onclick="navigateToScene(0)"></a-image>
+         
+      </a-entity>
+            <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+
+    </a-scene>
+
+    <!-- Student center  -->
+    <a-scene id="scene10" style="display: none" dynamic>
+      <a-assets>
+        <video id="scene10-texture" autoplay="true" loop="true" src="assets/Student Centre.mkv">
+      </a-assets>
+      
+      <a-entity id="scene10-container">
+        <a-videosphere src="#scene10-texture"></a-videosphere>
+        <a-image src= "assets/nav.png " rotation="0 0 0" position="1 0.75 -4" radius="0.5" height="1.5"  onclick="navigateToScene(0)"></a-image>
+         
+      </a-entity>
+            <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+
+    </a-scene>
+
+    <!-- Waterloo hall -->
+    <a-scene id="scene11" style="display: none" dynamic>
+      <a-assets>
+        <video id="scene11-texture" autoplay="true" loop="true" src="assets/Waterloo_NewVideo.mp4">
+      </a-assets>
+      
+      <a-entity id="scene11-container">
+        <a-videosphere src="#scene11-texture"></a-videosphere>
+        <a-image src= "assets/nav.png" rotation="0 0 0" position="1 0.75 -4" radius="0.5" height="1.5"  onclick="navigateToScene(0)"></a-image>
+         
+      </a-entity>
+            <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+
+    </a-scene>
+
+    <!-- careers hub x Cafe  -->
+    <a-scene id="scene12" style="display: none" dynamic>
+      <a-assets>
+        <video id="scene12-texture" autoplay="true" loop="true" src="assets/Careers hub x Cafe (1).mkv">
+      </a-assets>
+      
+      <a-entity id="scene12-container">
+        <a-videosphere src="#scene12-texture"></a-videosphere>
+        <a-image src= "assets/nav.png " rotation="0 0 0" position="1 0.75 -4" radius="0.5" height="1.5" onclick="navigateToScene(0)"></a-image>
+      </a-entity>
+            <!-- players veiw point -->
+            <a-camera position= "1 2 1">
+              <!-- cursor circle -->
+              <a-cursor color="red"> </a-cursor>
+          </a-camera>
+
+    </a-scene>
+
+
+    
+    <script >
+      function navigateToScene(sceneNumber) {
+        var scenes = document.querySelectorAll('a-scene');
+        for (var i = 0; i < scenes.length; i++) {
+          if (scenes[i].id === "scene" + sceneNumber) {
+            scenes[i].style.display = "block";
+            scenes[i].setAttribute('dynamic', true);
+          } else {
+            scenes[i].style.display = "none";
+            scenes[i].setAttribute('dynamic', false);
+          }
+        }
+      }
+    </script>
+    
+  </body>
+</html>
